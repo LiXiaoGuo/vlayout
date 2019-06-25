@@ -168,6 +168,8 @@ artifactoryPublish.onlyIf {
     version.endsWith("-SNAPSHOT")
 }
 
-task deploy(dependsOn: ['install', 'bintrayUpload', 'artifactoryPublish']) << {
-    println "deploy ...."
+task deploy(dependsOn: ['install', 'bintrayUpload', 'artifactoryPublish']){
+    doLast{
+        println "deploy ...."
+    }
 }

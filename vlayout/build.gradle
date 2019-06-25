@@ -26,20 +26,24 @@ apply plugin: 'com.android.library'
 
 buildscript {
     repositories {
+        maven{ url 'http://maven.aliyun.com/nexus/content/groups/public'}
         maven { url 'https://oss.sonatype.org/content/repositories/snapshots/' }
         maven { url "http://oss.jfrog.org/oss-snapshot-local/" }
         mavenCentral()
+        google()
         jcenter()
     }
 
     dependencies {
-        classpath 'com.android.tools.build:gradle:2.3.0'
+        classpath 'com.android.tools.build:gradle:3.4.1'
     }
 }
 
 repositories {
+    maven{ url 'http://maven.aliyun.com/nexus/content/groups/public'}
     maven { url 'https://oss.sonatype.org/content/repositories/snapshots/' }
     maven { url "http://oss.jfrog.org/oss-snapshot-local/" }
+    google()
     jcenter()
     mavenLocal()
 }
@@ -104,21 +108,13 @@ android {
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
     // compile project(':extension')
-    if (project.hasProperty('useNewSupportLibrary')) {
-        compile 'com.android.support:recyclerview-v7:25.2.0@aar'
-        compile('com.android.support:support-v4:25.2.0@aar')
-        compile 'com.android.support:support-annotations:25.2.0'
-        compile 'com.android.support:support-compat:25.2.0'
-        compile 'com.android.support:support-core-ui:25.2.0'
-    } else {
-        compile 'com.android.support:recyclerview-v7:23.1.1@aar'
-        compile('com.android.support:support-v4:23.1.1@aar') {
-            exclude group: 'com.android.support', module: 'support-annotations'
-        }
-        compile 'com.android.support:support-annotations:23.1.1'
-    }
+    api 'androidx.recyclerview:recyclerview:1.0.0@aar'
+    api('androidx.legacy:legacy-support-v4:1.0.0@aar')
+    api 'androidx.annotation:annotation:1.1.0'
+    api 'androidx.core:core:1.0.2'
+    api 'androidx.legacy:legacy-support-core-ui:1.0.0'
 
-    androidTestCompile "org.robolectric:robolectric:3.0"
+    androidTestImplementation "org.robolectric:robolectric:3.0"
 }
 
 

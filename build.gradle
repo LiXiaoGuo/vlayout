@@ -26,13 +26,15 @@
 
 buildscript {
     repositories {
+        maven{ url 'http://maven.aliyun.com/nexus/content/groups/public'}
         maven { url 'https://oss.sonatype.org/content/repositories/snapshots/' }
         maven { url "http://oss.jfrog.org/oss-snapshot-local/" }
         mavenCentral()
+        google()
         jcenter()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:2.2.2'
+        classpath 'com.android.tools.build:gradle:3.4.1'
         classpath 'com.github.xfumihiro.view-inspector:view-inspector-plugin:0.1.1'
         classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:1.4'
         classpath 'org.jfrog.buildinfo:build-info-extractor-gradle:4.0.0'
@@ -42,8 +44,10 @@ buildscript {
 
 allprojects {
     repositories {
+        maven{ url 'http://maven.aliyun.com/nexus/content/groups/public'}
         maven { url 'https://oss.sonatype.org/content/repositories/snapshots/' }
         maven { url "http://oss.jfrog.org/oss-snapshot-local/" }
+        google()
         jcenter()
         mavenLocal()
     }
