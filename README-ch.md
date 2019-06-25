@@ -47,19 +47,19 @@ VirtualLayout是一个针对RecyclerView的LayoutManager扩展, 主要提供一�
 版本请参考 [release 说明](https://github.com/alibaba/vlayout/releases)里的最新版本，最新的 aar 都会发布到 jcenter 和 MavenCentral 上，确保配置了这两个仓库源，然后引入aar依赖：
 
 ``` gradle 
-compile ('com.alibaba.android:vlayout:1.2.8@aar') {
-	transitive = true
-}
+implementation ('com.github.LiXiaoGuo:vlayout:1.2.24@aar'){
+        transitive = true
+    }
 ```
 
 或者maven:  
 pom.xml
 ``` xml
 <dependency>
-  <groupId>com.alibaba.android</groupId>
-  <artifactId>vlayout</artifactId>
-  <version>1.2.8</version>
-  <type>aar</type>
+    <groupId>com.github.LiXiaoGuo</groupId>
+    <artifactId>vlayout</artifactId>
+    <version>1.2.24</version>
+    <type>aar</type>
 </dependency>
 ```
 
